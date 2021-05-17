@@ -1,3 +1,14 @@
+---
+stack: react
+pack: re-react, react-dom, react-scripts, web-vitals, node-sass
+---
+
+## using sass
+```
+npm i node-sass
+```
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
