@@ -7,6 +7,11 @@ pack: re-react, react-dom, react-scripts, web-vitals, node-sass
 ```
 npm i node-sass
 ```
+
+## using font awesome with React
+[click here for info](https://blog.fontawesome.com/react-font-awesome/)
+[click here to install](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
+---
 ---
 
 # Getting Started with Create React App
