@@ -8,6 +8,13 @@ pack: re-react, react-dom, react-scripts, web-vitals, node-sass
 npm i node-sass
 ```
 
+## about uuidv4 
+[click here](https://www.npmjs.com/package/uuid)
+## install uuidv4
+```
+npm i uuid
+```
+
 ## using font awesome with React
 [click here for info](https://blog.fontawesome.com/react-font-awesome/)
 [click here to install](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react)
