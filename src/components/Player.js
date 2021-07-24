@@ -1,4 +1,4 @@
-import React, {useState,useRef} from 'react';
+import React, {useState} from 'react';
 import {FontAwesomeIcon}from '@fortawesome/react-fontawesome';
 import {faPlay,
         faAngleLeft,
@@ -6,9 +6,7 @@ import {faPlay,
         faPause,
     } from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({currentSong, isPlaying, setIsPlaying}) => {
-     //Ref
-     const audioRef = useRef(null);
+const Player = ({audioRef,currentSong, isPlaying, setIsPlaying,setSongInfo,songInfo}) => {
     //Events Handlers
     const playSongHandler = () => {
         //test
@@ -23,13 +21,7 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
        setIsPlaying(!isPlaying);
        }
     };
-    const timeUpdateHandler = (e) => {
-        const current = e.target.currentTime;
-        const duration = e.target.duration;  //same name
-       //setSongInfo({...setSongInfo,currTime: current, duration: duration})  //same name duration, so type it for once
-       setSongInfo({...songInfo,currentTime: current, duration});
-        //console.log(e);
-    };
+    //before..
     const getTime = (time) => {
         //format time
         return(
@@ -42,10 +34,7 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
        setSongInfo({...songInfo, currentTime: e.target.value})
     }
     //state
-    const [songInfo,setSongInfo] = useState({
-        currentTime: 0,  //currentTime: null
-        duration: 0,  //same name :: duration: null
-    });
+   //before
     return(
        <div className="player">
           <div className="time-control">
@@ -58,7 +47,6 @@ const Player = ({currentSong, isPlaying, setIsPlaying}) => {
           <FontAwesomeIcon onClick={playSongHandler}  className="play" size="2x" icon={isPlaying ? faPause : faPlay}/>
           <FontAwesomeIcon  className="skip-forward" size="2x" icon={faAngleRight}/>
           </div>
-          <audio onTimeUpdate={timeUpdateHandler} onLoadedMetadata={timeUpdateHandler} ref={audioRef} src={currentSong.audio}></audio>
        </div>
         );
 };
